@@ -12,14 +12,14 @@
     $(document).ready(function () {
         // Using a Promise object
         liff.init({
-            liffId: '1657886428-pLdLMg9N' // Use own liffId
+            liffId: '1657886428-QgL30AKM' // Use own liffId
         })
         .then(() => {
             // Start to use liff's api
             liff.getProfile()
             .then(profile => {
                 liff.openWindow({
-                url: "https://lauratolearn.github.io/LinLIFF/SayHi(?P<name>.+)"+profile.displayName,
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.194502301="+profile.displayName,
                 });
                 liff.closeWindow();  //關閉視窗
             })
