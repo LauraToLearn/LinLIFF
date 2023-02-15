@@ -41,14 +41,14 @@ liff.getProfile().then(function (profile) {
 
                 
               liff.openWindow({
-              url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="&<a id="user_name"></a>,
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="+profile.displayName,
               });
               liff.closeWindow();  //關閉視窗
-              })
+              
             .catch((err) => {
                 console.log(err.code, err.message);
             });
-        }        
+                
 
 
     </script>
