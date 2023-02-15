@@ -39,16 +39,16 @@
             // 取得一般的 user profile
             liff.getProfile().then(function (profile) {
                 console.log(profile);
-                $("#user_avatar").attr("src", profile.pictureUrl);
-                $("#user_name").text('姓名 : ' + profile.displayName);
-                $("#user_id").text('使用者ID : ' + profile.userId);
-                $("#user_status").text('狀態文字 : ' + profile.statusMessage);
+             //   $("#user_avatar").attr("src", profile.pictureUrl);
+                  $("#user_name").text; //('姓名 : ' + profile.displayName)
+              //  $("#user_id").text('使用者ID : ' + profile.userId);
+             //   $("#user_status").text('狀態文字 : ' + profile.statusMessage);
              });
-           // liff.openWindow({
-         //   url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="+profile.displayName,
-          //  });
-         //   liff.closeWindow();  //關閉視窗
-       //     })
+              liff.openWindow({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="+profile.displayName,
+              });
+              liff.closeWindow();  //關閉視窗
+              })
             .catch((err) => {
                 console.log(err.code, err.message);
             });
