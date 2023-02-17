@@ -34,9 +34,9 @@
                 url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform",
                 });
                 liff.closeWindow();  //關閉視窗
-            })
-            .catch((err) => {
-            console.log('error', err);
+                
+            }).catch((err) => {
+               console.log('error', err);
             });
 
         })
@@ -44,7 +44,7 @@
             // Error happens during initialization
             console.log(err.code, err.message);
         });
-    });
+    }
 
 </script>
 </head>
