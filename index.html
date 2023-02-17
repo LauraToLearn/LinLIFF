@@ -27,13 +27,6 @@
             // withLoginOnExternalBrowser : true 時代表 auto login 啟動，LIFF 初始化後會自動呼叫 liff.login 登入。
             liff.init({ liffId: liffId, withLoginOnExternalBrowser: true }).then(() => {
 
-
-    $(document).ready(function () {
-        // Using a Promise object
-        liff.init({
-            liffId: '1657912840-Oax7BJ0v' // Use own liffId
-        })
-        .then(() => {
             // Start to use liff's api
             liff.getProfile()
             .then(profile => {
