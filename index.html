@@ -29,15 +29,6 @@
         function liffInit(liffId) {
             // withLoginOnExternalBrowser : true 時代表 auto login 啟動，LIFF 初始化後會自動呼叫 liff.login 登入。
             liff.init({ liffId: liffId, withLoginOnExternalBrowser: true }).then(() => {
-                liff.getProfile().then(function (profile) {
-                    console.log(profile);
-                    $("#user_name").text('姓名 : ' + profile.displayName);
-                });
-                
-                liff.openWindow({
-                url: "url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="+<a id="user_name"></a>,
-                });
-                liff.closeWindow();  //關閉視窗
 
                 // 取得一般的 user profile
                 liff.getProfile().then(function (profile) {
