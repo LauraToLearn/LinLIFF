@@ -16,27 +16,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-    <script>
-        window.onload = function () {
-            const defaultLiffId = '1657912840-Oax7BJ0v';
-            $(document).ready(function () {
-                liffInit(defaultLiffId);
-            });
-        }
-        function liffInit(liffId) {
-            // withLoginOnExternalBrowser : true 時代表 auto login 啟動，LIFF 初始化後會自動呼叫 liff.login 登入。
-            liff.init({ liffId: liffId, withLoginOnExternalBrowser: true }).then(() => {
+<script>
 
+
+    $(document).ready(function () {
+        // Using a Promise object
+        liff.init({
+            liffId: '1657912840-Oax7BJ0v' // Use own liffId
+        })
+        .then(() => {
             // Start to use liff's api
             liff.getProfile()
             .then(profile => {
                 liff.openWindow({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="+profile.displayName,
                 });
                 liff.closeWindow();  //關閉視窗
-                
-            }).catch((err) => {
-               console.log('error', err);
+            })
+            .catch((err) => {
+            console.log('error', err);
             });
 
         })
@@ -44,7 +42,7 @@
             // Error happens during initialization
             console.log(err.code, err.message);
         });
-    }
+    });
 
 </script>
 </head>
