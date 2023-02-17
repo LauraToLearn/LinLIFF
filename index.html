@@ -27,42 +27,37 @@
             // withLoginOnExternalBrowser : true 時代表 auto login 啟動，LIFF 初始化後會自動呼叫 liff.login 登入。
             liff.init({ liffId: liffId, withLoginOnExternalBrowser: true }).then(() => {
 
+<script>
+
+
+    $(document).ready(function () {
+        // Using a Promise object
+        liff.init({
+            liffId: '1657912840-Oax7BJ0v' // Use own liffId
+        })
+        .then(() => {
+            // Start to use liff's api
+            liff.getProfile()
+            .then(profile => {
                 liff.openWindow({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSfJAAcpY2-Kwy2wUdpnFExVP3jkHnursbvjE-vdNuq8uLzWpw/viewform?entry.535376762=999&entry.1945072301="+profile.displayName,
                 });
                 liff.closeWindow();  //關閉視窗
-                
-                // 取得一般的 user profile
-                liff.getProfile().then(function (profile) {
-                    console.log(profile);
-                    $("#user_avatar").attr("src", profile.pictureUrl);
-                    $("#user_name").text('姓名 : ' + profile.displayName);
-                    $("#user_id").text('使用者ID : ' + profile.userId);
-                    $("#user_status").text('狀態文字 : ' + profile.statusMessage);
-                });
-
-            }).catch((err) => {
-                console.log(err.code, err.message);
             })
-        }
+            .catch((err) => {
+            console.log('error', err);
+            });
 
-    </script>
+        })
+        .catch((err) => {
+            // Error happens during initialization
+            console.log(err.code, err.message);
+        });
+    });
 
-<body>
+</script>
+</head>
+    <body>
         <h1>網頁跳轉中</h1>
-    
-    <div class="topnav">
-    </div>
-    
-    <center>
-        <div class="container">
-            <a> -------- ACCESS TOKEN -------- </a>
-            <a><img id="user_avatar" src=""></image></a>
-            <a><a id="user_name">姓名 : </a></a>
-            <a><a id="user_id">使用者ID : </a></a>
-            <a><a id="user_status">狀態文字 : </a></a>
-        </div>
-    </center>
-</body>
-
+    </body>
 </html>
